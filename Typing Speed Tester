@@ -1,0 +1,27 @@
+import time
+import random
+text=["The quick brown fox jumps over the lazy dog.",
+"In a galaxy far, far away, a heroic adventure unfolds.",
+"Typing speed can improve with consistent practice.",
+"Autumn leaves rustle in the gentle breeze.",
+"The recipe calls for a pinch of salt and a dash of pepper.",
+"Music has the power to soothe the soul.",
+"A journey of a thousand miles begins with a single step.",
+"The sun sets over the horizon, painting the sky with vibrant colors.",
+"Practice makes perfect in all things, including typing.",
+"Laughter is the best medicine for a weary heart."]
+def speed(time,char):
+    total_words=char/5
+    minutes=time/60
+    words_per_min=total_words/minutes
+    return words_per_min
+line=random.choice(text)
+print("Type the following sentence: ")
+print(line)
+start_timer=time.time()
+input_user=input()
+end_timer=time.time()
+total_time=end_timer-start_timer
+speed_in_wpm=speed(total_time,len(line))
+print(f"Duration: {total_time:.2f} seconds")
+print(f"Typing Velocity: {speed_in_wpm:.2f} Words per Minute")
